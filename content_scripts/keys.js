@@ -752,7 +752,7 @@ var KeyHandler = {
           event.preventDefault();
           Mappings.actions.nextCompletionResult();
         }
-        break;
+        return;
       case '<C-k>':
         if (Command.type === 'action' && settings.cncpcompletion) {
           event.preventDefault();
