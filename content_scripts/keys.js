@@ -747,14 +747,13 @@ var KeyHandler = {
       }, 0);
       switch (key) {
       case '<Tab>': // Tab navigation/completion
-      case '<S-Tab>':
-        if (Command.type === 'action') {
+      case '<C-j>':
+        if (Command.type === 'action' && settings.cncpcompletion) {
           event.preventDefault();
-          Mappings.actions[ (key === '<Tab>' ? 'next' : 'previous') +
-                            'CompletionResult' ]();
+          Mappings.actions.nextCompletionResult();
         }
         break;
-      case '<C-p>':
+      case '<C-k>':
         if (Command.type === 'action' && settings.cncpcompletion) {
           event.preventDefault();
           Mappings.actions.previousCompletionResult();
